@@ -176,7 +176,7 @@ opts.partitions, opts.gap, opts.top_margin, opts.angles or "No angle markings")
 
 def main(opts, args):
     if opts.landscape and opts.radial:
-        print("Ignoring radial for landscape mode")
+        print "Ignoring radial for landscape mode"
         opts.radial = False
     pagesize = page_sizes[opts.pagesize]
     if opts.landscape:

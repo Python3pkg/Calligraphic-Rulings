@@ -1,4 +1,4 @@
-import io
+import StringIO
 
 from ruling import main
 from .revproxy import ReverseProxied
@@ -32,10 +32,10 @@ def pdf():
                   ('distance', int),
                   ('landscape', bool),
                   ('pagesize', str)]:
-        print(i, "   ", request.args.get(i,''))
+        print i, "   ", request.args.get(i,'')
         setattr(cfg, i, typ(request.args.get(i,'')))
     fname = request.args.get('title','rulings').replace(" ","_").lower() + ".pdf"
-    s = io.StringIO()
+    s = StringIO.StringIO()
     main(cfg, [None, s])
 
     resp = make_response(s.getvalue())
