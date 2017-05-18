@@ -1,7 +1,7 @@
 import io
 
 from ruling import main
-from revproxy import ReverseProxied
+from flask_reverse_proxy import ReverseProxied
 
 from flask import Flask, request, render_template, send_file, make_response
 
